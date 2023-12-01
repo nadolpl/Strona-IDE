@@ -1,0 +1,358 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>SprytneSzczury</title>
+    <script src="https://kit.fontawesome.com/c7dc428cd7.js" crossorigin="anonymous"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+ </head>
+ <body>
+    <div id="container">
+        <nav id="topNav">
+            <div id="optionsMenu">
+                <span class="option">Plik</span>
+                <span class="option">Edycja</span>
+                <span class="option">Widok</span>
+                <span class="option">Projekt</span>
+                <span class="option">Debuguj</span>
+                <span class="option">Pomoc</span>
+            </div>
+            <div id="icons">
+                <i class="fa-regular fa-window-minimize"></i>
+                <i class="fa-regular fa-window-restore"></i>
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        </nav>
+        <div id="topEmptyBar"></div>
+        <section id="middleSection">
+            <div id="leftEmptyBar"></div>
+            <section id="codeSection">
+                <nav id="openFiles">
+                    <div class="file">Project.cs</div>
+                    <div class="file">Index.html</div>
+                    <div class="file">Style.css</div>
+                </nav>
+                <div id="numbersAndCode">
+                    <div id="numbersBar">
+                        <span class="number">1</span>
+                        <span class="number">2</span>
+                        <span class="number">3</span>
+                        <span class="number">4</span>
+                        <span class="number">5</span>
+                        <span class="number">6</span>
+                        <span class="number">7</span>
+                        <span class="number">8</span>
+                        <span class="number">9</span>
+                        <span class="number">10</span>
+                        <span class="number">11</span>
+                        <span class="number">12</span>
+                        <span class="number">13</span>
+                        <span class="number">14</span>
+                        <span class="number">15</span>
+                        <span class="number">16</span>
+                        <span class="number">17</span>
+                        <span class="number">18</span>
+                        <span class="number">19</span>
+                        <span class="number">20</span>
+                        <span class="number">21</span>
+                        <span class="number">22</span>
+                        <span class="number">23</span>
+                        <span class="number">24</span>
+                        <span class="number">25</span>
+                        <span class="number">26</span>
+                        <span class="number">27</span>
+                        <span class="number">28</span>
+                        <span class="number">29</span>
+                        <span class="number">30</span>
+                    </div>
+                    <div id="code">
+                        <span class="codeText blink">_</span>
+                    </div>
+                </div>
+            </section>
+            <section id="files">
+                <header>Pliki</header>
+                <ol style="list-style-type:upper-roman">
+                    <li><i class="fa-solid fa-angle-right" style="color: #F4DFC8"></i> Project.cs</li>
+                    <li><i class="fa-solid fa-angle-right" style="color: #F4DFC8"></i> Index.html</li>
+                    <li><i class="fa-solid fa-angle-right" style="color: #F4DFC8"></i> Style.css</li>
+                </ol>
+                <img class="logo" src="Group 2.png" alt="logo">
+            </section>
+            <nav id="rightNav">
+                <div id="icons">
+                    <i class="fa-solid fa-file-circle-plus"></i>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i class="fa-solid fa-user"></i>
+                    <i class="fa-solid fa-bars"></i>
+                    <i class="fa-solid fa-gear"></i>
+                </div>
+                <div id="ourApps">
+                    <div class="app tasks" title="Organizator zadań">
+                        <i class="fa-solid fa-list"></i>
+                    </div>
+                    <div class="app speaker" title="Asystent głosowy">
+                        <i class="fa-solid fa-volume-high"></i>
+                    </div>
+                    <div class="app timely" title="Licznik czasu">
+                        <i class="fa-regular fa-clock tico"></i>
+                    </div>
+                </div>
+            </nav>
+        </section>
+        <div id="bottomEmptyBar"></div>
+        <footer>Created by SprytneSzczury</footer>
+        <div class="timelyWindow invisible">
+            <i class="fa-solid fa-xmark timelyExit"></i>
+            <header><i class="fa-regular fa-clock"></i> Timely</header>
+            <div class="counters">
+                <div class="session">
+                    <span>Obecna sesja</span>
+                    <div class="counter"></div>
+                </div>
+                <div class="allTime">
+                    <span>Łączny czas przy projekcie</span>   
+                    <div class="counter"></div>
+                </div>
+                <div class="currentFile">
+                    <span>Czas spędzony przy obecnym pliku</span>
+                    <div class="counter"></div>
+                </div>    
+                <div class="break">
+                    <span class="timeContent">Przerwa za</span>
+                    <div class="timeCount"></div>
+                </div>
+            </div>
+            <div class="timelyFooter">
+                <i class="fa-solid fa-clock-rotate-left timelyHistoryIcon"></i>
+                <i class="fa-solid fa-gear timelySettingsIcon"></i>
+                <i class="fa-solid fa-file-lines timelyReportIcon"></i>
+            </div>
+        </div>
+        <div class="timelyReport invisible">
+            <i class="fa-solid fa-xmark timelyReportExit"></i>
+            <i class="fa-solid fa-print"></i>
+            <header><i class="fa-solid fa-file-lines"></i> Statystyki</header>
+            <div class="infoContainer">
+                <div class="info">
+                    <div>Czas spędzony nad projektem</div>
+                    <div>Ilość przerw</div>
+                    <div>Data rozpoczęcia</div>
+                    <div>Data zakończenia</div>
+                    <div></div>
+                    <div>project.cs</div>
+                    <div>index.html</div>
+                    <div>style.css</div>
+                </div>
+                <div class="timeSpent">
+                    <div>11h 25min</div>
+                    <div>3</div>
+                    <div>25.11.2023</div>
+                    <div>w trakcie</div>
+                    <div></div>
+                    <div>5h 15min</div>
+                    <div>2h 25min</div>
+                    <div>3h 45min</div>
+                </div>
+            </div>
+        </div>
+        <div class="timelyHistory invisible">
+            <i class="fa-solid fa-xmark timelyHistoryExit"></i>
+            <header><i class="fa-solid fa-clock-rotate-left"></i> Historia</header>
+            <img src="wykres.png" alt="wykres">
+        </div>
+        <div class="timelySettings invisible">
+            <i class="fa-solid fa-xmark timelySettingsExit"></i>
+            <header class="settingsHeader"><i class="fa-solid fa-gear"></i> Ustawienia</header>
+            <div class="breakSettings">
+                <div class="breakHeader">Przerwa</div>
+                    <div class="miniText timeUntilBreak">Czas pracy:
+                        <span class="timeUntilBreakValue">60</span> minut
+                    </div>
+                    <div class="slidecontainer">
+                        <input type="range" min="1" max="120" value="60" class="slider" id="timeUntilBreak"">
+                    </div>
+                    <div class="miniText breakTime">Długość przerwy:
+                        <span class="breakTimeValue">15</span> minut
+                    </div>
+                    <div class="slidecontainer">
+                        <input type="range" min="1" max="30" value="15" class="slider" id="breakTime"">
+                    </div>
+            </div>
+            <div class="notifications">
+                <div>Powiadomienia</div>
+                <div class="checkbox-wrapper-18">
+                    <div class="round">
+                      <input type="checkbox" id="checkbox-18" />
+                      <label for="checkbox-18"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="breakNotification">
+            <i class="fa-regular fa-bell fa-shake"></i>
+            <div class="content"> Czas na przerwę!</div>
+        </div>
+        <div class="taskManager invisible">
+            <i class="fa-solid fa-xmark taskManagerExit"></i>
+            <header class="taskManagerHeader">
+                <span class="membersHeader active">Członkowie</span>
+                <span class="tasksHeader">Zadania</span>
+            </header>
+            <div class="taskManagerMembers">
+                <div class="member">
+                    <i class="fa-solid fa-xmark removeMember"></i>
+                    <div class="userData">
+                        <img src="lewy.png" class="avatar">
+                        <div class="rankNname">
+                            <div class="rank">Lider</div>
+                            <div class="name">Robert Lewandowski</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="member">
+                    <i class="fa-solid fa-xmark removeMember"></i>
+                    <div class="userData">
+                        <img src="wojtek.png" class="avatar">
+                        <div class="rankNname">
+                            <div class="rank">Back-end</div>
+                            <div class="name">Wojciech Szczęsny</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="member">
+                    <i class="fa-solid fa-xmark removeMember"></i>
+                    <div class="userData">
+                        <img src="krycha.png" class="avatar">
+                        <div class="rankNname">
+                            <div class="rank">Front-end</div>
+                            <div class="name">Grzegorz Krychowiak</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="newMember">
+                    <i class="fa-solid fa-plus fa-beat-fade"></i>
+                </div>
+            </div>
+        </div>
+        <div class="member memberCreator">
+            <i class="fa-solid fa-plus fa-beat memberCreatorAdd"></i>
+            <div class="userData">
+                <img src="user.png" class="avatar">
+                <div class="rankNname">
+                    <input class="inputRank" placeholder="Ranga">
+                    <input class="inputName" placeholder="Imie i Nazwisko">
+                </div>
+            </div>
+        </div>
+        <div class="taskCreator">
+            <i class="fa-solid fa-plus fa-beat taskCreatorAdd"></i>
+            <div class="thing">
+                <i class="fa-solid fa-hammer"></i>
+                <input class="inputNameT" placeholder="Treść zadania">
+            </div>
+            <div class="thing">
+                <i class="fa-regular fa-user"></i>
+                <input class="inputOwnerT" placeholder="Wykonawca">
+            </div>
+            <div class="thing">
+                <i class="fa-solid fa-calendar-days"></i>
+                <input class="inputDateT" placeholder="Wykonać do: ">
+            </div>
+        </div>
+    </div>
+    <div class="taskManagerTasks">
+        <div class="task">
+            <i class="fa-solid fa-xmark removeTask"></i>
+            <div class="taskName">
+                <i class="fa-solid fa-hammer"></i>
+                <span>Poprawić UX</span>
+            </div>
+            <div class="taskOwner"><i class="fa-regular fa-user"></i> Wojciech Szczęsny</div>
+            <div class="taskStatus"><i class="fa-regular fa-circle-xmark"></i></div>
+            <div class="taskPriority"><i class="fa-regular fa-star"></i></div>
+            <div class="taskEndDate"><i class="fa-solid fa-calendar-days"></i> 15.12.2023</div>
+        </div>
+        <div class="task">
+            <i class="fa-solid fa-xmark removeTask"></i>
+            <div class="taskName">
+                <i class="fa-solid fa-hammer"></i>
+                <span>Połączyć aplikację z bazą danych</span>
+            </div>
+            <div class="taskOwner"><i class="fa-regular fa-user"></i> Robert Lewandowski</div>
+            <div class="taskStatus"><i class="fa-regular fa-circle-xmark"></i></div>
+            <div class="taskPriority"><i class="fa-regular fa-star"></i></div>
+            <div class="taskEndDate"><i class="fa-solid fa-calendar-days"></i> 23.12.2023</div>
+        </div>
+        <div class="task">
+            <i class="fa-solid fa-xmark removeTask"></i>
+            <div class="taskName">
+                <i class="fa-solid fa-hammer"></i>
+                <span>Zmienić nagłówek</span>
+            </div>
+            <div class="taskOwner"><i class="fa-regular fa-user"></i> Grzegorz Krychowiak</div>
+            <div class="taskStatus"><i class="fa-regular fa-circle-xmark"></i></div>
+            <div class="taskPriority"><i class="fa-regular fa-star"></i></div>
+            <div class="taskEndDate"><i class="fa-solid fa-calendar-days"></i> 13.12.2023</div>
+        </div>
+        <div class="newTask">
+            <i class="fa-solid fa-plus fa-beat-fade newTaskBtn"></i>
+        </div>
+    </div>
+</body>
+ <script src="script.js"></script>
+ </html>
+
+
+
+
+  <style>
+    .checkbox-wrapper-18 .round {
+      position: relative;
+    }
+  
+    .checkbox-wrapper-18 .round label {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 50%;
+      cursor: pointer;
+      height: 28px;
+      width: 28px;
+      display: block;
+    }
+  
+    .checkbox-wrapper-18 .round label:after {
+      border: 2px solid #fff;
+      border-top: none;
+      border-right: none;
+      content: "";
+      height: 6px;
+      left: 8px;
+      opacity: 0;
+      position: absolute;
+      top: 9px;
+      transform: rotate(-45deg);
+      width: 12px;
+    }
+  
+    .checkbox-wrapper-18 .round input[type="checkbox"] {
+      visibility: hidden;
+      display: none;
+      opacity: 0;
+    }
+  
+    .checkbox-wrapper-18 .round input[type="checkbox"]:checked + label {
+      background-color: #66bb6a;
+      border-color: #66bb6a;
+    }
+  
+    .checkbox-wrapper-18 .round input[type="checkbox"]:checked + label:after {
+      opacity: 1;
+    }
+  </style>
+  

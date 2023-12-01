@@ -1,0 +1,959 @@
+* {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    font-family: Sansation;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap');
+
+@font-face {
+    font-family: 'Sansation';
+    src: url('fonts/SansationRegular.ttf')  format('truetype'); /* Safari, Android, iOS */
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+$color-1: #252525;
+$color-2: #F4DFC8;
+$color-3: #2c2c2c;
+$color-4: #FAF6F0;
+
+body {
+
+    #container {
+        background-color: $color-1;
+        width: 100vw;
+        height: 100vh;
+        
+        #topNav {
+            background-color: $color-2;
+            width: 100%;
+            height: 4%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            text-align: left;
+            font-size: 1.6rem;
+            
+            .option {
+                margin-left: 25px;
+            }
+            
+            #icons{
+                display: flex;
+                align-items: center;
+                text-align: center;
+                width: 7%;
+                justify-content: space-around;
+            }
+        }
+        
+        #topEmptyBar, #bottomEmptyBar {
+            background-color: $color-3;
+            width: 100%;
+            height: 1%;
+
+        }
+
+        #middleSection {
+            background-color: $color-1;
+            width: 100%;
+            height: 92%;
+            display: flex;
+
+            #leftEmptyBar {
+                background-color: $color-1;
+                width: 1%;
+                height: 100%;
+            }
+
+            #codeSection {
+                width: 85%;
+                height: 100%;
+                
+
+                #openFiles {
+                    background-color: $color-3;
+                    width: 100%;
+                    height: 5%;
+                    display: flex;
+                    color: $color-4;
+                    font-size: 1.3rem;
+                    
+                    .file {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 10%;
+                        height: 100%;
+                        border-bottom: 1px solid $color-2;
+                        margin-left: 2%;
+                    }
+                }
+
+                #numbersAndCode {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    
+                    #numbersBar {
+                        background-color: $color-3;
+                        width: 2%;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        color: $color-4;
+                        padding-top: 10px;
+
+                        .number {
+                            margin-top: 7px;
+                        }
+                    }
+
+                    #code {
+                        background-color: $color-1;
+                        width: 100%;
+                        height: 100%;
+                        padding: 18px;
+                        
+                        .codeText {
+                            color: $color-4;
+                        }
+                        .blink {
+                            animation: blinker 1s step-start infinite;
+                        }
+
+                        @keyframes blinker {
+                            50% {
+                              opacity: 0;
+                            }
+                          }
+                    }
+                }
+            }
+
+            #files {
+                background-color: #303030;
+                width: 10%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                color: $color-4;
+
+                header {
+                    font-size: 2rem;
+                    margin-top: 5%;
+                    width: 50%;
+                    text-align: center;
+                    border-bottom: 3px solid $color-2;
+                }
+
+                ol {
+                    width: 60%;
+                }
+                li {
+                    font-size: 1.2rem;
+                    margin-top: 30%;
+                }
+            }
+
+            #rightNav {
+                background-color: $color-3;
+                width: 4%;
+                height: 100%;
+                color: $color-2;
+                font-size: 2.6rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                #icons {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    flex-direction: column;
+                    width: 100%;
+                    height: 40%;
+                }
+
+                #ourApps {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 100%;
+                    height: 20%;
+                    padding-bottom: 10px;
+                    
+                    .app {
+                        position: relative;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100%;
+                        height: 30%;
+                        cursor: pointer;
+                        transition: transform .5s;
+                        
+                        &:hover { 
+                            color: #b39473;
+                            transform: scale(1.2);
+
+                        }      
+                        
+                        .tico {
+                            transition: transform 1s ease-in-out;
+                            &:hover {
+                                transform: rotate(360deg);
+
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+        
+        .timelyWindow {
+            position: absolute;
+            width: 300px;
+            height: 500px;
+            left: 50%;
+            top: 20%;
+            background-color: $color-3;
+            border-radius: 20px;
+            z-index: 22;
+            color: $color-4;
+            font-size: 2rem;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+           // align-items: center;
+
+            box-shadow:
+                1.2px 1.7px 2.2px rgba(0, 0, 0, 0.02),
+                3px 4.2px 5.3px rgba(0, 0, 0, 0.028),
+                5.6px 7.9px 10px rgba(0, 0, 0, 0.035),
+                10.1px 14.1px 17.9px rgba(0, 0, 0, 0.042),
+                18.8px 26.3px 33.4px rgba(0, 0, 0, 0.05),
+                45px 63px 80px rgba(0, 0, 0, 0.07);
+
+            .timelyExit {
+                position: absolute;
+                text-align: center;
+                top: 10px;
+                right: 10px;
+                cursor: pointer;
+                z-index: 5;
+            }
+
+            header {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 10%;
+                font-family: 'Sansita Swashed';
+                margin: 10px;
+
+                .fa-clock {
+                    font-size: 1.5rem;
+                }
+            }
+
+            .counters {
+                width: 100%;
+                height: 70%;
+                font-size: 1.5rem;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+
+                .session, .allTime, .break, .currentFile {
+                    text-align: center;
+                    width: 100%;
+                    min-height: 10%;
+                    margin-bottom: 15px;
+                }
+
+                .counter, .timeCount {
+                    color: $color-2;
+                    margin: 5px;
+                    font-size: 1.2rem;
+                }
+            }
+
+            .timelyFooter {
+                background-color: $color-1;
+                position: absolute;
+                bottom: 0;
+                text-align: center;
+                width: 100%;
+                min-height: 10%;
+                font-size: 2.5rem;
+                border-radius: 20px 20px 0 0;
+                color: $color-2;
+
+                i {
+                    margin: 0 2px 0 2px;
+                }
+
+                .fa-gear {
+                    font-size: 4rem;
+                }
+
+                .timelyReportIcon, .fa-gear, .timelyHistoryIcon  {
+                    transition: transform 1s;
+                    &:hover {
+                        cursor: pointer;
+                        transform: rotate(360deg);
+                    }
+                }
+                
+            }
+        }
+
+        .timelyReport {
+            position: absolute;
+            width: 600px;
+            height: 500px;
+            left: 50%;
+            top: 20%;
+            background-color: $color-3;
+            border-radius: 20px;
+            z-index: 22;
+            color: $color-4;
+            font-size: 2rem;
+
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            box-shadow:
+                1.2px 1.7px 2.2px rgba(0, 0, 0, 0.02),
+                3px 4.2px 5.3px rgba(0, 0, 0, 0.028),
+                5.6px 7.9px 10px rgba(0, 0, 0, 0.035),
+                10.1px 14.1px 17.9px rgba(0, 0, 0, 0.042),
+                18.8px 26.3px 33.4px rgba(0, 0, 0, 0.05),
+                45px 63px 80px rgba(0, 0, 0, 0.07);
+
+            .timelyReportExit {
+                position: absolute;
+                text-align: center;
+                top: 10px;
+                right: 10px;
+                cursor: pointer;
+                z-index: 5;
+            }
+            
+            header {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 10%;
+                font-family: 'Sansita Swashed';
+                margin: 10px;
+
+                .fa-file-lines{
+                    font-size: 1.5rem;
+                }
+            }
+
+            .fa-print {
+                position: absolute;
+                text-align: center;
+                bottom: 10px;
+                right: 15px;
+                cursor: pointer;
+                z-index: 5;
+            }
+
+            .infoContainer {
+                font-size: 1.5rem;
+                height: 70%;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+
+                .info {
+                    height: 100%;
+                    width: 75%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    flex-direction: column;
+                    text-align: center;
+
+                    .break {
+                        font-size: 1.8rem;
+                    }
+                }
+                .timeSpent {
+                    height: 100%;
+                    width: 25%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    color: $color-2;
+                }
+            }
+        }
+
+        .timelyHistory{
+            position: absolute;
+            width: 800px;
+            height: 500px;
+            left: 50%;
+            top: 20%;
+            background-color: $color-3;
+            border-radius: 20px;
+            z-index: 22;
+            color: $color-4;
+            font-size: 2rem;
+
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            box-shadow:
+                1.2px 1.7px 2.2px rgba(0, 0, 0, 0.02),
+                3px 4.2px 5.3px rgba(0, 0, 0, 0.028),
+                5.6px 7.9px 10px rgba(0, 0, 0, 0.035),
+                10.1px 14.1px 17.9px rgba(0, 0, 0, 0.042),
+                18.8px 26.3px 33.4px rgba(0, 0, 0, 0.05),
+                45px 63px 80px rgba(0, 0, 0, 0.07);
+
+            .timelyHistoryExit {
+                position: absolute;
+                text-align: center;
+                top: 10px;
+                right: 10px;
+                cursor: pointer;
+                z-index: 5;
+            }
+            
+            header {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 10%;
+                font-family: 'Sansita Swashed';
+                margin: 10px;
+
+                .fa-clock-rotate-left{
+                    font-size: 1.5rem;
+                }
+            }
+        }
+        
+        .timelySettings {
+            position: absolute;
+            width: 300px;
+            height: 500px;
+            left: 50%;
+            top: 20%;
+            background-color: $color-3;
+            border-radius: 20px;
+            z-index: 22;
+            color: $color-4;
+            font-size: 2rem;
+            display: flex;
+            flex-direction: column;
+            box-shadow:
+                1.2px 1.7px 2.2px rgba(0, 0, 0, 0.02),
+                3px 4.2px 5.3px rgba(0, 0, 0, 0.028),
+                5.6px 7.9px 10px rgba(0, 0, 0, 0.035),
+                10.1px 14.1px 17.9px rgba(0, 0, 0, 0.042),
+                18.8px 26.3px 33.4px rgba(0, 0, 0, 0.05),
+                45px 63px 80px rgba(0, 0, 0, 0.07);
+
+            .timelySettingsExit {
+                position: absolute;
+                text-align: center;
+                top: 10px;
+                right: 10px;
+                cursor: pointer;
+                z-index: 5;
+            }
+
+            .settingsHeader {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 10%;
+                font-family: 'Sansita Swashed';
+                padding: 10px;
+                .fa-gear {
+                    font-size: 1.5rem;
+                }
+            }
+
+            .breakSettings, .notifications {
+                width: 100%;
+                text-align: center;
+                font-size: 1.8rem;
+            }
+
+            .breakSettings {
+                height: 30%;
+                margin-top: 20%;
+            
+                .miniText {
+                    font-size: 1.3rem;
+                    margin: 5px 0 0 25px;
+                    text-align: left;
+                    color: $color-2;
+                }
+
+                .slider {
+                    appearance: none;
+                    width: 80%;
+                    height: 15px;
+                    border-radius: 20px;  
+                    background: #222222;
+                    outline: none;
+                }
+                .slider::-webkit-slider-thumb {
+                    appearance: none;
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 200px;
+                    background: $color-2; 
+                    cursor: pointer;
+                  }
+            }
+
+            .notifications {
+                display: flex;
+                text-align: center;
+                justify-content: space-evenly;
+                margin-top: 10%;
+
+                .notificationsCheckBox {
+                    background-color: red;
+                    content: "";
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 200px;
+                    cursor: pointer;
+                }
+
+            }
+
+        }
+
+        .breakNotification {
+            background-color: $color-4;
+            position: absolute;
+            bottom: 36px;
+            right: 90px;
+            width: 270px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 15px;
+            font-size: 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            animation: bounce-in-right 1.1s both;
+            transform: translateX(500px);
+
+            .content {
+                width: 80%;
+            }
+            
+            .fa-bell {
+                color: $color-1;
+                font-size: 2rem;
+            }
+        }
+
+        .taskManager {
+            position: absolute;
+            width: 300px;
+            height: 500px;
+            left: 50%;
+            top: 20%;
+            background-color: $color-3;
+            border-radius: 20px;
+            z-index: 22;
+            color: $color-4;
+            font-size: 2rem;
+            display: flex;
+            flex-direction: column;
+
+            box-shadow:
+                1.2px 1.7px 2.2px rgba(0, 0, 0, 0.02),
+                3px 4.2px 5.3px rgba(0, 0, 0, 0.028),
+                5.6px 7.9px 10px rgba(0, 0, 0, 0.035),
+                10.1px 14.1px 17.9px rgba(0, 0, 0, 0.042),
+                18.8px 26.3px 33.4px rgba(0, 0, 0, 0.05),
+                45px 63px 80px rgba(0, 0, 0, 0.07);
+
+            .taskManagerExit {
+                position: absolute;
+                text-align: center;
+                top: 10px;
+                right: 10px;
+                cursor: pointer;
+                z-index: 5;
+            }
+
+            .taskManagerHeader {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 90%;
+                height: 8%;
+                padding: 20px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+
+                .membersHeader, .tasksHeader {
+                    font-family: 'Sansita Swashed';
+                    font-size: 1.7rem;
+                    opacity: .2;
+                    cursor: pointer;
+                }
+                .active {
+                    opacity: 1;
+                }
+
+                
+            }
+            
+            .taskManagerMembers {
+                width: 100%;
+                height: 80%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .member {
+                    position: relative;
+                    width: 100%;
+                    height: 20%;
+                    font-size: 1rem;
+                    margin: 10px 0 10px 0;
+
+                    .removeMember{
+                        position: absolute;
+                        right: 20px;
+                        cursor: pointer;
+                    }
+
+                    .userData {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    
+                    .avatar {
+                        width: 60px;
+                        height: 60px;
+                        border-radius: 200px;
+                        background-color: $color-2;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    
+                    .rankNname {
+                        width: 75%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+
+                        .rank {
+                            font-size: 1.1rem;
+                            color: $color-2;
+                        }
+                        .name {
+                            font-size: 1.3rem;
+                        }
+                    }
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        width: 90%;
+                        height: 3px;
+                        background-color: #b39473;
+                        z-index: 111;
+                        bottom: 0;
+                        left: 15px;
+                    }
+                }
+
+                .newMember {
+                    position: absolute;
+                    bottom: 0;
+                    right: 10px;
+
+                    .fa-plus {
+                        font-size: 2rem;
+                        color: $color-2;
+                        cursor: pointer;
+                    }
+                }    
+            }
+
+            .taskManagerTasks {
+                width: 100%;
+                height: 80%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .task {
+                    margin-top: 10px;
+                    width: 100%;
+                    height: 25%;
+                    font-size: 1rem;
+                    position: relative;
+                    background-color: #313131;
+
+
+                    .removeTask {
+                        position: absolute;
+                        right: 5px;
+                        cursor: pointer;
+                    }
+
+                    .taskName{
+                        width: 90%;
+                        height: 50%;
+                        font-size: 2rem;
+                        padding: 10px;
+                        display: flex;
+                        align-items: center;
+
+                        span {
+                            font-size: 1rem;
+                            max-width: 75%;
+                            margin-left: 10px;
+                        }
+                        i {
+                            color: $color-2;
+                        }
+                    }
+
+                    .taskPriority {
+                        position: absolute;
+                        right: 5px;
+                        bottom: 0;
+                        cursor: pointer;
+                        font-size: 1.2rem;
+                        color: rgb(238, 226, 57);
+                    }
+
+                    .taskStatus {
+                        position: absolute;
+                        right: 35px;
+                        bottom: -1px;
+                        cursor: pointer;
+                        font-size: 1.2rem;
+                        color: #ac2626;
+                    }
+
+                    .taskOwner, .taskEndDate {
+                        margin-left: 5px;
+                        height: 20%;
+                        position: absolute;
+                        bottom: 25px;
+                        
+                        i {
+                            color: $color-2;
+                        }
+                    }
+                    .taskEndDate{
+                        bottom: 0;
+                    }
+                }
+
+                .newTask {
+                    position: absolute;
+                    bottom: 0;
+                    right: 10px;
+
+                    .fa-plus {
+                        font-size: 2rem;
+                        color: $color-2;
+                        cursor: pointer;
+                    }
+                }    
+            }
+        }
+
+        .taskCreator {
+            top: 12%;
+            right: 15%;
+            width: 350px;
+            height: 120px;
+            font-size: 1rem;
+            position: absolute;
+            background-color: $color-3;
+            color: $color-4;
+            border-radius: 10px;
+            transform: translateY(-300px);
+            transition: 1s;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: column;
+            box-shadow:
+                1.2px 1.7px 2.2px rgba(0, 0, 0, 0.02),
+                3px 4.2px 5.3px rgba(0, 0, 0, 0.028),
+                5.6px 7.9px 10px rgba(0, 0, 0, 0.035),
+                10.1px 14.1px 17.9px rgba(0, 0, 0, 0.042),
+                18.8px 26.3px 33.4px rgba(0, 0, 0, 0.05),
+                45px 63px 80px rgba(0, 0, 0, 0.07);
+                
+            input {
+                outline: none;
+                border: none;
+                background-color: transparent;
+                appearance: none;	
+                color: $color-4;
+                width: 200px;
+            }
+            
+            .taskCreatorAdd {
+                position: absolute;
+                text-align: center;
+                top: 10px;
+                right: 10px;
+                cursor: pointer;
+                z-index: 5;
+            }
+
+            .thing{
+                display: flex;
+                align-items: center;
+                width: 100%;
+                height: 30%;
+                margin-left: 15px;
+
+                i {
+                    color: $color-2;
+                    font-size: 1.5rem;
+                    width: 40px;
+                }
+            }
+        }
+
+        .memberCreator {
+            position: absolute;
+            background-color: $color-3;
+            left: 50%;
+            top: 0%;
+            width: 300px;
+            height: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            color: $color-4;
+            border-radius: 20px;
+            transform: translateY(-300px);
+
+            box-shadow:
+                1.2px 1.7px 2.2px rgba(0, 0, 0, 0.02),
+                3px 4.2px 5.3px rgba(0, 0, 0, 0.028),
+                5.6px 7.9px 10px rgba(0, 0, 0, 0.035),
+                10.1px 14.1px 17.9px rgba(0, 0, 0, 0.042),
+                18.8px 26.3px 33.4px rgba(0, 0, 0, 0.05),
+                45px 63px 80px rgba(0, 0, 0, 0.07);
+            
+            .memberCreatorAdd {
+                position: absolute;
+                text-align: center;
+                top: 10px;
+                right: 10px;
+                cursor: pointer;
+                z-index: 5;
+            }
+
+            .userData {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                input {
+                    outline: none;
+                    border: none;
+                    background-color: transparent;
+                    appearance: none;	
+                    color: $color-4;
+                    text-align: center;
+                }
+
+                .avatar {
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 200px;
+                    background-color: $color-2;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                
+                .rankNname {
+                    width: 75%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+
+                    .inputRank {
+                        font-size: 1.1rem;
+                        color: $color-2;
+                    }
+                    .inputName {
+                        font-size: 1.3rem;
+                    }
+                }
+            }
+        }
+
+        footer {
+            background-color: $color-2;
+            width: 100%;
+            height: 2%;
+            font-size: .9rem;
+            text-transform: uppercase;
+            font-weight: 800;
+            padding-right: 5%;
+            text-align: right;
+            cursor: pointer;
+        }
+
+        .logo {
+            position: absolute;
+            bottom: -25px;
+            right: 25px;
+            transform: scale(.5);
+            opacity: .5;
+        }
+    }
+
+    .invisible {visibility: hidden }
+}

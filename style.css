@@ -1,0 +1,798 @@
+@import url("https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  font-family: Sansation;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Sansation";
+  src: url("fonts/SansationRegular.ttf") format("truetype"); /* Safari, Android, iOS */
+  font-weight: 400;
+  font-style: normal;
+}
+body #container {
+  background-color: #252525;
+  width: 100vw;
+  height: 100vh;
+}
+body #container #topNav {
+  background-color: #F4DFC8;
+  width: 100%;
+  height: 4%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  font-size: 1.6rem;
+}
+body #container #topNav .option {
+  margin-left: 25px;
+}
+body #container #topNav #icons {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 7%;
+  justify-content: space-around;
+}
+body #container #topEmptyBar, body #container #bottomEmptyBar {
+  background-color: #2c2c2c;
+  width: 100%;
+  height: 1%;
+}
+body #container #middleSection {
+  background-color: #252525;
+  width: 100%;
+  height: 92%;
+  display: flex;
+}
+body #container #middleSection #leftEmptyBar {
+  background-color: #252525;
+  width: 1%;
+  height: 100%;
+}
+body #container #middleSection #codeSection {
+  width: 85%;
+  height: 100%;
+}
+body #container #middleSection #codeSection #openFiles {
+  background-color: #2c2c2c;
+  width: 100%;
+  height: 5%;
+  display: flex;
+  color: #FAF6F0;
+  font-size: 1.3rem;
+}
+body #container #middleSection #codeSection #openFiles .file {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10%;
+  height: 100%;
+  border-bottom: 1px solid #F4DFC8;
+  margin-left: 2%;
+}
+body #container #middleSection #codeSection #numbersAndCode {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+body #container #middleSection #codeSection #numbersAndCode #numbersBar {
+  background-color: #2c2c2c;
+  width: 2%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #FAF6F0;
+  padding-top: 10px;
+}
+body #container #middleSection #codeSection #numbersAndCode #numbersBar .number {
+  margin-top: 7px;
+}
+body #container #middleSection #codeSection #numbersAndCode #code {
+  background-color: #252525;
+  width: 100%;
+  height: 100%;
+  padding: 18px;
+}
+body #container #middleSection #codeSection #numbersAndCode #code .codeText {
+  color: #FAF6F0;
+}
+body #container #middleSection #codeSection #numbersAndCode #code .blink {
+  animation: blinker 1s step-start infinite;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+body #container #middleSection #files {
+  background-color: #303030;
+  width: 10%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #FAF6F0;
+}
+body #container #middleSection #files header {
+  font-size: 2rem;
+  margin-top: 5%;
+  width: 50%;
+  text-align: center;
+  border-bottom: 3px solid #F4DFC8;
+}
+body #container #middleSection #files ol {
+  width: 60%;
+}
+body #container #middleSection #files li {
+  font-size: 1.2rem;
+  margin-top: 30%;
+}
+body #container #middleSection #rightNav {
+  background-color: #2c2c2c;
+  width: 4%;
+  height: 100%;
+  color: #F4DFC8;
+  font-size: 2.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body #container #middleSection #rightNav #icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 100%;
+  height: 40%;
+}
+body #container #middleSection #rightNav #ourApps {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 20%;
+  padding-bottom: 10px;
+}
+body #container #middleSection #rightNav #ourApps .app {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 30%;
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+body #container #middleSection #rightNav #ourApps .app:hover {
+  color: #b39473;
+  transform: scale(1.2);
+}
+body #container #middleSection #rightNav #ourApps .app .tico {
+  transition: transform 1s ease-in-out;
+}
+body #container #middleSection #rightNav #ourApps .app .tico:hover {
+  transform: rotate(360deg);
+}
+body #container .timelyWindow {
+  position: absolute;
+  width: 300px;
+  height: 500px;
+  left: 50%;
+  top: 20%;
+  background-color: #2c2c2c;
+  border-radius: 20px;
+  z-index: 22;
+  color: #FAF6F0;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 1.2px 1.7px 2.2px rgba(0, 0, 0, 0.02), 3px 4.2px 5.3px rgba(0, 0, 0, 0.028), 5.6px 7.9px 10px rgba(0, 0, 0, 0.035), 10.1px 14.1px 17.9px rgba(0, 0, 0, 0.042), 18.8px 26.3px 33.4px rgba(0, 0, 0, 0.05), 45px 63px 80px rgba(0, 0, 0, 0.07);
+}
+body #container .timelyWindow .timelyExit {
+  position: absolute;
+  text-align: center;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  z-index: 5;
+}
+body #container .timelyWindow header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 10%;
+  font-family: "Sansita Swashed";
+  margin: 10px;
+}
+body #container .timelyWindow header .fa-clock {
+  font-size: 1.5rem;
+}
+body #container .timelyWindow .counters {
+  width: 100%;
+  height: 70%;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+body #container .timelyWindow .counters .session, body #container .timelyWindow .counters .allTime, body #container .timelyWindow .counters .break, body #container .timelyWindow .counters .currentFile {
+  text-align: center;
+  width: 100%;
+  min-height: 10%;
+  margin-bottom: 15px;
+}
+body #container .timelyWindow .counters .counter, body #container .timelyWindow .counters .timeCount {
+  color: #F4DFC8;
+  margin: 5px;
+  font-size: 1.2rem;
+}
+body #container .timelyWindow .timelyFooter {
+  background-color: #252525;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  min-height: 10%;
+  font-size: 2.5rem;
+  border-radius: 20px 20px 0 0;
+  color: #F4DFC8;
+}
+body #container .timelyWindow .timelyFooter i {
+  margin: 0 2px 0 2px;
+}
+body #container .timelyWindow .timelyFooter .fa-gear {
+  font-size: 4rem;
+}
+body #container .timelyWindow .timelyFooter .timelyReportIcon, body #container .timelyWindow .timelyFooter .fa-gear, body #container .timelyWindow .timelyFooter .timelyHistoryIcon {
+  transition: transform 1s;
+}
+body #container .timelyWindow .timelyFooter .timelyReportIcon:hover, body #container .timelyWindow .timelyFooter .fa-gear:hover, body #container .timelyWindow .timelyFooter .timelyHistoryIcon:hover {
+  cursor: pointer;
+  transform: rotate(360deg);
+}
+body #container .timelyReport {
+  position: absolute;
+  width: 600px;
+  height: 500px;
+  left: 50%;
+  top: 20%;
+  background-color: #2c2c2c;
+  border-radius: 20px;
+  z-index: 22;
+  color: #FAF6F0;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 1.2px 1.7px 2.2px rgba(0, 0, 0, 0.02), 3px 4.2px 5.3px rgba(0, 0, 0, 0.028), 5.6px 7.9px 10px rgba(0, 0, 0, 0.035), 10.1px 14.1px 17.9px rgba(0, 0, 0, 0.042), 18.8px 26.3px 33.4px rgba(0, 0, 0, 0.05), 45px 63px 80px rgba(0, 0, 0, 0.07);
+}
+body #container .timelyReport .timelyReportExit {
+  position: absolute;
+  text-align: center;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  z-index: 5;
+}
+body #container .timelyReport header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 10%;
+  font-family: "Sansita Swashed";
+  margin: 10px;
+}
+body #container .timelyReport header .fa-file-lines {
+  font-size: 1.5rem;
+}
+body #container .timelyReport .fa-print {
+  position: absolute;
+  text-align: center;
+  bottom: 10px;
+  right: 15px;
+  cursor: pointer;
+  z-index: 5;
+}
+body #container .timelyReport .infoContainer {
+  font-size: 1.5rem;
+  height: 70%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+body #container .timelyReport .infoContainer .info {
+  height: 100%;
+  width: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  text-align: center;
+}
+body #container .timelyReport .infoContainer .info .break {
+  font-size: 1.8rem;
+}
+body #container .timelyReport .infoContainer .timeSpent {
+  height: 100%;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  color: #F4DFC8;
+}
+body #container .timelyHistory {
+  position: absolute;
+  width: 800px;
+  height: 500px;
+  left: 50%;
+  top: 20%;
+  background-color: #2c2c2c;
+  border-radius: 20px;
+  z-index: 22;
+  color: #FAF6F0;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 1.2px 1.7px 2.2px rgba(0, 0, 0, 0.02), 3px 4.2px 5.3px rgba(0, 0, 0, 0.028), 5.6px 7.9px 10px rgba(0, 0, 0, 0.035), 10.1px 14.1px 17.9px rgba(0, 0, 0, 0.042), 18.8px 26.3px 33.4px rgba(0, 0, 0, 0.05), 45px 63px 80px rgba(0, 0, 0, 0.07);
+}
+body #container .timelyHistory .timelyHistoryExit {
+  position: absolute;
+  text-align: center;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  z-index: 5;
+}
+body #container .timelyHistory header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 10%;
+  font-family: "Sansita Swashed";
+  margin: 10px;
+}
+body #container .timelyHistory header .fa-clock-rotate-left {
+  font-size: 1.5rem;
+}
+body #container .timelySettings {
+  position: absolute;
+  width: 300px;
+  height: 500px;
+  left: 50%;
+  top: 20%;
+  background-color: #2c2c2c;
+  border-radius: 20px;
+  z-index: 22;
+  color: #FAF6F0;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1.2px 1.7px 2.2px rgba(0, 0, 0, 0.02), 3px 4.2px 5.3px rgba(0, 0, 0, 0.028), 5.6px 7.9px 10px rgba(0, 0, 0, 0.035), 10.1px 14.1px 17.9px rgba(0, 0, 0, 0.042), 18.8px 26.3px 33.4px rgba(0, 0, 0, 0.05), 45px 63px 80px rgba(0, 0, 0, 0.07);
+}
+body #container .timelySettings .timelySettingsExit {
+  position: absolute;
+  text-align: center;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  z-index: 5;
+}
+body #container .timelySettings .settingsHeader {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 10%;
+  font-family: "Sansita Swashed";
+  padding: 10px;
+}
+body #container .timelySettings .settingsHeader .fa-gear {
+  font-size: 1.5rem;
+}
+body #container .timelySettings .breakSettings, body #container .timelySettings .notifications {
+  width: 100%;
+  text-align: center;
+  font-size: 1.8rem;
+}
+body #container .timelySettings .breakSettings {
+  height: 30%;
+  margin-top: 20%;
+}
+body #container .timelySettings .breakSettings .miniText {
+  font-size: 1.3rem;
+  margin: 5px 0 0 25px;
+  text-align: left;
+  color: #F4DFC8;
+}
+body #container .timelySettings .breakSettings .slider {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 80%;
+  height: 15px;
+  border-radius: 20px;
+  background: #222222;
+  outline: none;
+}
+body #container .timelySettings .breakSettings .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+          appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 200px;
+  background: #F4DFC8;
+  cursor: pointer;
+}
+body #container .timelySettings .notifications {
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
+  margin-top: 10%;
+}
+body #container .timelySettings .notifications .notificationsCheckBox {
+  background-color: red;
+  content: "";
+  width: 30px;
+  height: 30px;
+  border-radius: 200px;
+  cursor: pointer;
+}
+body #container .breakNotification {
+  background-color: #FAF6F0;
+  position: absolute;
+  bottom: 36px;
+  right: 90px;
+  width: 270px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 15px;
+  font-size: 1.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  animation: bounce-in-right 1.1s both;
+  transform: translateX(500px);
+}
+body #container .breakNotification .content {
+  width: 80%;
+}
+body #container .breakNotification .fa-bell {
+  color: #252525;
+  font-size: 2rem;
+}
+body #container .taskManager {
+  position: absolute;
+  width: 300px;
+  height: 500px;
+  left: 50%;
+  top: 20%;
+  background-color: #2c2c2c;
+  border-radius: 20px;
+  z-index: 22;
+  color: #FAF6F0;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1.2px 1.7px 2.2px rgba(0, 0, 0, 0.02), 3px 4.2px 5.3px rgba(0, 0, 0, 0.028), 5.6px 7.9px 10px rgba(0, 0, 0, 0.035), 10.1px 14.1px 17.9px rgba(0, 0, 0, 0.042), 18.8px 26.3px 33.4px rgba(0, 0, 0, 0.05), 45px 63px 80px rgba(0, 0, 0, 0.07);
+}
+body #container .taskManager .taskManagerExit {
+  position: absolute;
+  text-align: center;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  z-index: 5;
+}
+body #container .taskManager .taskManagerHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  height: 8%;
+  padding: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+body #container .taskManager .taskManagerHeader .membersHeader, body #container .taskManager .taskManagerHeader .tasksHeader {
+  font-family: "Sansita Swashed";
+  font-size: 1.7rem;
+  opacity: 0.2;
+  cursor: pointer;
+}
+body #container .taskManager .taskManagerHeader .active {
+  opacity: 1;
+}
+body #container .taskManager .taskManagerMembers {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body #container .taskManager .taskManagerMembers .member {
+  position: relative;
+  width: 100%;
+  height: 20%;
+  font-size: 1rem;
+  margin: 10px 0 10px 0;
+}
+body #container .taskManager .taskManagerMembers .member .removeMember {
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+}
+body #container .taskManager .taskManagerMembers .member .userData {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body #container .taskManager .taskManagerMembers .member .avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 200px;
+  background-color: #F4DFC8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body #container .taskManager .taskManagerMembers .member .rankNname {
+  width: 75%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+body #container .taskManager .taskManagerMembers .member .rankNname .rank {
+  font-size: 1.1rem;
+  color: #F4DFC8;
+}
+body #container .taskManager .taskManagerMembers .member .rankNname .name {
+  font-size: 1.3rem;
+}
+body #container .taskManager .taskManagerMembers .member::after {
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 3px;
+  background-color: #b39473;
+  z-index: 111;
+  bottom: 0;
+  left: 15px;
+}
+body #container .taskManager .taskManagerMembers .newMember {
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+}
+body #container .taskManager .taskManagerMembers .newMember .fa-plus {
+  font-size: 2rem;
+  color: #F4DFC8;
+  cursor: pointer;
+}
+body #container .taskManager .taskManagerTasks {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body #container .taskManager .taskManagerTasks .task {
+  margin-top: 10px;
+  width: 100%;
+  height: 25%;
+  font-size: 1rem;
+  position: relative;
+  background-color: #313131;
+}
+body #container .taskManager .taskManagerTasks .task .removeTask {
+  position: absolute;
+  right: 5px;
+  cursor: pointer;
+}
+body #container .taskManager .taskManagerTasks .task .taskName {
+  width: 90%;
+  height: 50%;
+  font-size: 2rem;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+body #container .taskManager .taskManagerTasks .task .taskName span {
+  font-size: 1rem;
+  max-width: 75%;
+  margin-left: 10px;
+}
+body #container .taskManager .taskManagerTasks .task .taskName i {
+  color: #F4DFC8;
+}
+body #container .taskManager .taskManagerTasks .task .taskPriority {
+  position: absolute;
+  right: 5px;
+  bottom: 0;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: rgb(238, 226, 57);
+}
+body #container .taskManager .taskManagerTasks .task .taskStatus {
+  position: absolute;
+  right: 35px;
+  bottom: -1px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #ac2626;
+}
+body #container .taskManager .taskManagerTasks .task .taskOwner, body #container .taskManager .taskManagerTasks .task .taskEndDate {
+  margin-left: 5px;
+  height: 20%;
+  position: absolute;
+  bottom: 25px;
+}
+body #container .taskManager .taskManagerTasks .task .taskOwner i, body #container .taskManager .taskManagerTasks .task .taskEndDate i {
+  color: #F4DFC8;
+}
+body #container .taskManager .taskManagerTasks .task .taskEndDate {
+  bottom: 0;
+}
+body #container .taskManager .taskManagerTasks .newTask {
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+}
+body #container .taskManager .taskManagerTasks .newTask .fa-plus {
+  font-size: 2rem;
+  color: #F4DFC8;
+  cursor: pointer;
+}
+body #container .taskCreator {
+  top: 12%;
+  right: 15%;
+  width: 350px;
+  height: 120px;
+  font-size: 1rem;
+  position: absolute;
+  background-color: #2c2c2c;
+  color: #FAF6F0;
+  border-radius: 10px;
+  transform: translateY(-300px);
+  transition: 1s;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  box-shadow: 1.2px 1.7px 2.2px rgba(0, 0, 0, 0.02), 3px 4.2px 5.3px rgba(0, 0, 0, 0.028), 5.6px 7.9px 10px rgba(0, 0, 0, 0.035), 10.1px 14.1px 17.9px rgba(0, 0, 0, 0.042), 18.8px 26.3px 33.4px rgba(0, 0, 0, 0.05), 45px 63px 80px rgba(0, 0, 0, 0.07);
+}
+body #container .taskCreator input {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  color: #FAF6F0;
+  width: 200px;
+}
+body #container .taskCreator .taskCreatorAdd {
+  position: absolute;
+  text-align: center;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  z-index: 5;
+}
+body #container .taskCreator .thing {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 30%;
+  margin-left: 15px;
+}
+body #container .taskCreator .thing i {
+  color: #F4DFC8;
+  font-size: 1.5rem;
+  width: 40px;
+}
+body #container .memberCreator {
+  position: absolute;
+  background-color: #2c2c2c;
+  left: 50%;
+  top: 0%;
+  width: 300px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  color: #FAF6F0;
+  border-radius: 20px;
+  transform: translateY(-300px);
+  box-shadow: 1.2px 1.7px 2.2px rgba(0, 0, 0, 0.02), 3px 4.2px 5.3px rgba(0, 0, 0, 0.028), 5.6px 7.9px 10px rgba(0, 0, 0, 0.035), 10.1px 14.1px 17.9px rgba(0, 0, 0, 0.042), 18.8px 26.3px 33.4px rgba(0, 0, 0, 0.05), 45px 63px 80px rgba(0, 0, 0, 0.07);
+}
+body #container .memberCreator .memberCreatorAdd {
+  position: absolute;
+  text-align: center;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  z-index: 5;
+}
+body #container .memberCreator .userData {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body #container .memberCreator .userData input {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  color: #FAF6F0;
+  text-align: center;
+}
+body #container .memberCreator .userData .avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 200px;
+  background-color: #F4DFC8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body #container .memberCreator .userData .rankNname {
+  width: 75%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+body #container .memberCreator .userData .rankNname .inputRank {
+  font-size: 1.1rem;
+  color: #F4DFC8;
+}
+body #container .memberCreator .userData .rankNname .inputName {
+  font-size: 1.3rem;
+}
+body #container footer {
+  background-color: #F4DFC8;
+  width: 100%;
+  height: 2%;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  padding-right: 5%;
+  text-align: right;
+  cursor: pointer;
+}
+body #container .logo {
+  position: absolute;
+  bottom: -25px;
+  right: 25px;
+  transform: scale(0.5);
+  opacity: 0.5;
+}
+body .invisible {
+  visibility: hidden;
+}/*# sourceMappingURL=style.css.map */
